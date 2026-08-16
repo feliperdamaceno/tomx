@@ -64,7 +64,7 @@ export class Todo {
 
   public async update(input: UpdateAttributes) {
     Object.assign(this.attributes, input)
-    return this
+    await this.save()
   }
 
   public async destroy() {

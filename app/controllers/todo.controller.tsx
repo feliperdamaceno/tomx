@@ -34,6 +34,7 @@ export class TodoController {
       zValidator('param', ParamValidator),
       async (ctx) => {
         const { id } = ctx.req.valid('param')
+
         const todo = await Todo.find(id)
 
         return ctx.html(<TodoItem todo={todo} />)
@@ -49,6 +50,7 @@ export class TodoController {
       zValidator('form', TodoCreateSchema),
       async (ctx) => {
         const input = ctx.req.valid('form')
+
         await Todo.create(input)
 
         ctx.header('HX-Redirect', '/')
@@ -61,7 +63,9 @@ export class TodoController {
       zValidator('param', ParamValidator),
       async (ctx) => {
         const { id } = ctx.req.valid('param')
+
         const todo = await Todo.find(id)
+
         return ctx.html(<TodoUpdatePage todo={todo} />)
       }
     )
@@ -73,10 +77,9 @@ export class TodoController {
       async (ctx) => {
         const { id } = ctx.req.valid('param')
         const input = ctx.req.valid('form')
-
         const todo = await Todo.find(id)
-        todo.update(input)
-        await todo.save()
+
+        await todo.update(input)
 
         ctx.header('HX-Redirect', '/')
         return ctx.body(null)
