@@ -1,0 +1,30 @@
+{
+  "name": "tomx",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch bin/start.ts",
+    "build": "tsc",
+    "start": "node dist/bin/start.js",
+    "format": "prettier --write .",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.1",
+    "@hono/zod-validator": "^0.9.0",
+    "@libsql/client": "^0.17.4",
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "1.0.0-rc.4",
+    "hono": "^4.13.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "@types/node": "^26.1.1",
+    "drizzle-kit": "1.0.0-rc.4",
+    "prettier": "^3.9.6",
+    "prettier-plugin-css-order": "^2.2.0",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
+  }
+}

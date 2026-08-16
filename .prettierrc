@@ -1,0 +1,35 @@
+{
+  "singleQuote": true,
+  "tabWidth": 2,
+  "semi": false,
+  "endOfLine": "lf",
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "proseWrap": "always",
+  "importOrder": [
+    "<TYPES>",
+    "<TYPES>^[.]",
+    "",
+    "<BUILTIN_MODULES>",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^(@/|#)(components|pages)(/.*)?$",
+    "",
+    "^(@/|#)(constants|config)(/.*)?$",
+    "",
+    "^(@/|#)(util|utils|helper|helpers)(/.*)?$",
+    "",
+    "^(@/|#).*$",
+    "",
+    "^[.]"
+  ],
+  "importOrderCaseSensitive": true,
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "cssDeclarationSorterOrder": "smacss",
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-css-order"
+  ]
+}
